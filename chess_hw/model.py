@@ -157,6 +157,15 @@ def save_model(model: ChessGPT, path: str | Path) -> Path:
     return path
 
 
+def check_not_lfs_pointer(path: str | Path) -> None:
+    """Fail clearly if `path` is a git-lfs pointer (repo cloned without git-lfs)."""
+    with open(path, "rb") as f:
+        if f.read(24) == b"version https://git-lfs.":
+            raise RuntimeError(
+                f"{path} is a git-lfs pointer, not the real file: the repository was cloned without git-lfs. "
+                "Run `git lfs install && git lfs pull` in the repository (or use `uvx hf download ...`, see README).")
+
+
 def load_model(path: str | Path, device: str = "cpu") -> ChessGPT:
     """Load weights from a directory containing model.safetensors, or a .safetensors file."""
     from safetensors.torch import load_file
@@ -164,6 +173,7 @@ def load_model(path: str | Path, device: str = "cpu") -> ChessGPT:
     path = Path(path)
     if path.is_dir():
         path = path / "model.safetensors"
+    check_not_lfs_pointer(path)
     sd = load_file(str(path))
     err = validate_state_dict(sd)
     if err:

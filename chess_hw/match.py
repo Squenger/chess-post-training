@@ -24,7 +24,7 @@ import chess
 import torch
 
 from .engine import Engine
-from .model import load_model
+from .model import check_not_lfs_pointer, load_model
 from .play import ModelPlayer, MoveChoice
 
 PACKAGE_DIR = Path(__file__).resolve().parent
@@ -40,6 +40,7 @@ MAX_PLIES = 250  # game is adjudicated a draw after this many plies (fits in n_c
 
 @lru_cache(maxsize=None)
 def load_openings() -> List[List[str]]:
+    check_not_lfs_pointer(OPENINGS_FILE)
     with gzip.open(OPENINGS_FILE, "rt") as f:
         return [line.split() for line in f if line.strip()]
 
