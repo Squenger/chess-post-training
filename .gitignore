@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+my_model*/
+results/
+*.games.jsonl
+submission.enc
