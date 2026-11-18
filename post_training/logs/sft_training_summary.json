@@ -1,0 +1,458 @@
+{
+  "gpu_info": {
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 4060",
+    "vram_gb": 8.0,
+    "cuda_version": "12.4",
+    "compute_capability": "8.9",
+    "tf32_enabled": true,
+    "amp_enabled": true,
+    "amp_dtype": "bfloat16",
+    "nvidia_smi_detected": "NVIDIA GeForce RTX 4060, 8188 MiB, 610.88"
+  },
+  "best_checkpoint": "C:\\Users\\aimin\\Documents\\ENS MVA\\Fondation_of_LLM\\HW_optional\\chess-post-training\\post_training\\checkpoints\\sft_best\\model.safetensors",
+  "latest_checkpoint": "C:\\Users\\aimin\\Documents\\ENS MVA\\Fondation_of_LLM\\HW_optional\\chess-post-training\\post_training\\checkpoints\\sft_latest\\model.safetensors",
+  "sft_gate_passed": true,
+  "best_composite_score": 164.2418,
+  "logs": {
+    "steps_csv": "C:\\Users\\aimin\\Documents\\ENS MVA\\Fondation_of_LLM\\HW_optional\\chess-post-training\\post_training\\logs\\sft_steps.csv",
+    "val_csv": "C:\\Users\\aimin\\Documents\\ENS MVA\\Fondation_of_LLM\\HW_optional\\chess-post-training\\post_training\\logs\\sft_val.csv",
+    "dashboard_svg": "C:\\Users\\aimin\\Documents\\ENS MVA\\Fondation_of_LLM\\HW_optional\\chess-post-training\\post_training\\logs\\sft_dashboard.svg"
+  },
+  "base_eval": {
+    "n_positions": 1000,
+    "val_loss": 2.885,
+    "val_ce_loss": 2.5259,
+    "val_kl_uniform_legal": 2.4092,
+    "val_illegal_penalty": 0.2488,
+    "val_legal_prob": 0.9032,
+    "top1_legal_rate": 0.951,
+    "top2_legal_rate": 0.98,
+    "top3_legal_rate": 0.988,
+    "fallback_random_rate": 0.012,
+    "top1_sf_accuracy": 0.304,
+    "top3_sf_accuracy": 0.557,
+    "acpl": 87.155,
+    "top3_legal_ci95": [
+      0.982,
+      0.994
+    ],
+    "acpl_ci95": [
+      76.15,
+      99.86
+    ],
+    "sft_gate_passed": true,
+    "sft_gate_thresholds": {
+      "top1_legal_min": 0.92,
+      "top3_legal_min": 0.98
+    },
+    "composite_score": 159.4672,
+    "slices": {
+      "endgame": {
+        "count": 41,
+        "top1_legal_rate": 0.7561,
+        "top3_legal_rate": 0.9756,
+        "top1_sf_accuracy": 0.1951,
+        "acpl": 297.66
+      },
+      "middlegame": {
+        "count": 341,
+        "top1_legal_rate": 0.9326,
+        "top3_legal_rate": 0.9883,
+        "top1_sf_accuracy": 0.2082,
+        "acpl": 171.82
+      },
+      "opening": {
+        "count": 558,
+        "top1_legal_rate": 0.9964,
+        "top3_legal_rate": 1.0,
+        "top1_sf_accuracy": 0.353,
+        "acpl": 26.31
+      },
+      "tactical_check": {
+        "count": 60,
+        "top1_legal_rate": 0.7667,
+        "top3_legal_rate": 0.8833,
+        "top1_sf_accuracy": 0.4667,
+        "acpl": 27.97
+      }
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "step": 32,
+      "elapsed_sec": 8.85,
+      "lr_end": 0.00019936,
+      "train": {
+        "loss": 2.9715,
+        "ce_best": 2.2042,
+        "kl_uniform_legal": 0.2347,
+        "illegal_penalty": 0.3512,
+        "kl_ref": 0.0731,
+        "mean_legal_prob": 0.8554,
+        "grad_norm": 4.0962
+      },
+      "val": {
+        "n_positions": 1000,
+        "val_loss": 2.6357,
+        "val_ce_loss": 2.4495,
+        "val_kl_uniform_legal": 1.6695,
+        "val_illegal_penalty": 0.1865,
+        "val_legal_prob": 0.9244,
+        "top1_legal_rate": 0.971,
+        "top2_legal_rate": 0.988,
+        "top3_legal_rate": 0.993,
+        "fallback_random_rate": 0.007,
+        "top1_sf_accuracy": 0.315,
+        "top3_sf_accuracy": 0.572,
+        "acpl": 92.301,
+        "top3_legal_ci95": [
+          0.988,
+          0.997
+        ],
+        "acpl_ci95": [
+          80.05,
+          105.53
+        ],
+        "sft_gate_passed": true,
+        "sft_gate_thresholds": {
+          "top1_legal_min": 0.92,
+          "top3_legal_min": 0.98
+        },
+        "composite_score": 161.2649,
+        "slices": {
+          "endgame": {
+            "count": 41,
+            "top1_legal_rate": 0.8537,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.1463,
+            "acpl": 381.54
+          },
+          "middlegame": {
+            "count": 341,
+            "top1_legal_rate": 0.9589,
+            "top3_legal_rate": 0.9971,
+            "top1_sf_accuracy": 0.2199,
+            "acpl": 167.71
+          },
+          "opening": {
+            "count": 558,
+            "top1_legal_rate": 0.9982,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.3566,
+            "acpl": 30.38
+          },
+          "tactical_check": {
+            "count": 60,
+            "top1_legal_rate": 0.8667,
+            "top3_legal_rate": 0.9,
+            "top1_sf_accuracy": 0.5833,
+            "acpl": 42.0
+          }
+        }
+      },
+      "saved_best_gate": true
+    },
+    {
+      "epoch": 2,
+      "step": 70,
+      "elapsed_sec": 73.5,
+      "lr_end": 0.00018561,
+      "train": {
+        "loss": 2.6981,
+        "ce_best": 2.0547,
+        "kl_uniform_legal": 0.2108,
+        "illegal_penalty": 0.2805,
+        "kl_ref": 0.1487,
+        "mean_legal_prob": 0.8816,
+        "grad_norm": 3.6884
+      },
+      "val": {
+        "n_positions": 1000,
+        "val_loss": 2.5167,
+        "val_ce_loss": 2.3782,
+        "val_kl_uniform_legal": 1.5948,
+        "val_illegal_penalty": 0.155,
+        "val_legal_prob": 0.9333,
+        "top1_legal_rate": 0.979,
+        "top2_legal_rate": 0.994,
+        "top3_legal_rate": 0.997,
+        "fallback_random_rate": 0.003,
+        "top1_sf_accuracy": 0.327,
+        "top3_sf_accuracy": 0.606,
+        "acpl": 95.335,
+        "top3_legal_ci95": [
+          0.993,
+          1.0
+        ],
+        "acpl_ci95": [
+          81.69,
+          108.89
+        ],
+        "sft_gate_passed": true,
+        "sft_gate_thresholds": {
+          "top1_legal_min": 0.92,
+          "top3_legal_min": 0.98
+        },
+        "composite_score": 162.7833,
+        "slices": {
+          "endgame": {
+            "count": 41,
+            "top1_legal_rate": 0.878,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.1707,
+            "acpl": 337.88
+          },
+          "middlegame": {
+            "count": 341,
+            "top1_legal_rate": 0.9824,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.2141,
+            "acpl": 181.93
+          },
+          "opening": {
+            "count": 558,
+            "top1_legal_rate": 0.9964,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.3817,
+            "acpl": 30.2
+          },
+          "tactical_check": {
+            "count": 60,
+            "top1_legal_rate": 0.8667,
+            "top3_legal_rate": 0.95,
+            "top1_sf_accuracy": 0.5667,
+            "acpl": 43.2
+          }
+        }
+      },
+      "saved_best_gate": true
+    },
+    {
+      "epoch": 3,
+      "step": 114,
+      "elapsed_sec": 66.62,
+      "lr_end": 0.00015091,
+      "train": {
+        "loss": 2.5439,
+        "ce_best": 1.9474,
+        "kl_uniform_legal": 0.2099,
+        "illegal_penalty": 0.2482,
+        "kl_ref": 0.1794,
+        "mean_legal_prob": 0.8936,
+        "grad_norm": 3.5668
+      },
+      "val": {
+        "n_positions": 1000,
+        "val_loss": 2.4775,
+        "val_ce_loss": 2.3564,
+        "val_kl_uniform_legal": 1.5731,
+        "val_illegal_penalty": 0.1434,
+        "val_legal_prob": 0.9376,
+        "top1_legal_rate": 0.986,
+        "top2_legal_rate": 0.995,
+        "top3_legal_rate": 0.998,
+        "fallback_random_rate": 0.002,
+        "top1_sf_accuracy": 0.348,
+        "top3_sf_accuracy": 0.608,
+        "acpl": 95.739,
+        "top3_legal_ci95": [
+          0.995,
+          1.0
+        ],
+        "acpl_ci95": [
+          82.69,
+          111.19
+        ],
+        "sft_gate_passed": true,
+        "sft_gate_thresholds": {
+          "top1_legal_min": 0.92,
+          "top3_legal_min": 0.98
+        },
+        "composite_score": 163.8731,
+        "slices": {
+          "endgame": {
+            "count": 41,
+            "top1_legal_rate": 0.9268,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.1707,
+            "acpl": 383.54
+          },
+          "middlegame": {
+            "count": 341,
+            "top1_legal_rate": 0.9853,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.2375,
+            "acpl": 178.18
+          },
+          "opening": {
+            "count": 558,
+            "top1_legal_rate": 0.9982,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.4032,
+            "acpl": 29.51
+          },
+          "tactical_check": {
+            "count": 60,
+            "top1_legal_rate": 0.9167,
+            "top3_legal_rate": 0.9667,
+            "top1_sf_accuracy": 0.5833,
+            "acpl": 46.45
+          }
+        }
+      },
+      "saved_best_gate": true
+    },
+    {
+      "epoch": 4,
+      "step": 164,
+      "elapsed_sec": 66.38,
+      "lr_end": 9.874e-05,
+      "train": {
+        "loss": 2.4458,
+        "ce_best": 1.8771,
+        "kl_uniform_legal": 0.2097,
+        "illegal_penalty": 0.2288,
+        "kl_ref": 0.1989,
+        "mean_legal_prob": 0.9008,
+        "grad_norm": 3.3984
+      },
+      "val": {
+        "n_positions": 1000,
+        "val_loss": 2.4453,
+        "val_ce_loss": 2.3443,
+        "val_kl_uniform_legal": 1.5479,
+        "val_illegal_penalty": 0.1311,
+        "val_legal_prob": 0.9421,
+        "top1_legal_rate": 0.986,
+        "top2_legal_rate": 0.998,
+        "top3_legal_rate": 0.998,
+        "fallback_random_rate": 0.002,
+        "top1_sf_accuracy": 0.341,
+        "top3_sf_accuracy": 0.61,
+        "acpl": 93.543,
+        "top3_legal_ci95": [
+          0.995,
+          1.0
+        ],
+        "acpl_ci95": [
+          79.55,
+          108.45
+        ],
+        "sft_gate_passed": true,
+        "sft_gate_thresholds": {
+          "top1_legal_min": 0.92,
+          "top3_legal_min": 0.98
+        },
+        "composite_score": 163.8028,
+        "slices": {
+          "endgame": {
+            "count": 41,
+            "top1_legal_rate": 0.9756,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.2439,
+            "acpl": 336.51
+          },
+          "middlegame": {
+            "count": 341,
+            "top1_legal_rate": 0.9795,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.2317,
+            "acpl": 182.28
+          },
+          "opening": {
+            "count": 558,
+            "top1_legal_rate": 0.9964,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.3835,
+            "acpl": 28.8
+          },
+          "tactical_check": {
+            "count": 60,
+            "top1_legal_rate": 0.9333,
+            "top3_legal_rate": 0.9667,
+            "top1_sf_accuracy": 0.6333,
+            "acpl": 25.28
+          }
+        }
+      },
+      "saved_best_gate": false
+    },
+    {
+      "epoch": 5,
+      "step": 221,
+      "elapsed_sec": 71.35,
+      "lr_end": 4.504e-05,
+      "train": {
+        "loss": 2.3806,
+        "ce_best": 1.8284,
+        "kl_uniform_legal": 0.211,
+        "illegal_penalty": 0.2163,
+        "kl_ref": 0.2099,
+        "mean_legal_prob": 0.9057,
+        "grad_norm": 3.2937
+      },
+      "val": {
+        "n_positions": 1000,
+        "val_loss": 2.4323,
+        "val_ce_loss": 2.3328,
+        "val_kl_uniform_legal": 1.5362,
+        "val_illegal_penalty": 0.13,
+        "val_legal_prob": 0.9424,
+        "top1_legal_rate": 0.99,
+        "top2_legal_rate": 0.997,
+        "top3_legal_rate": 0.998,
+        "fallback_random_rate": 0.002,
+        "top1_sf_accuracy": 0.349,
+        "top3_sf_accuracy": 0.617,
+        "acpl": 95.663,
+        "top3_legal_ci95": [
+          0.995,
+          1.0
+        ],
+        "acpl_ci95": [
+          81.89,
+          110.6
+        ],
+        "sft_gate_passed": true,
+        "sft_gate_thresholds": {
+          "top1_legal_min": 0.92,
+          "top3_legal_min": 0.98
+        },
+        "composite_score": 164.2418,
+        "slices": {
+          "endgame": {
+            "count": 41,
+            "top1_legal_rate": 0.9756,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.2683,
+            "acpl": 376.54
+          },
+          "middlegame": {
+            "count": 341,
+            "top1_legal_rate": 0.9912,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.2229,
+            "acpl": 184.29
+          },
+          "opening": {
+            "count": 558,
+            "top1_legal_rate": 0.9964,
+            "top3_legal_rate": 1.0,
+            "top1_sf_accuracy": 0.3996,
+            "acpl": 28.91
+          },
+          "tactical_check": {
+            "count": 60,
+            "top1_legal_rate": 0.9333,
+            "top3_legal_rate": 0.9667,
+            "top1_sf_accuracy": 0.65,
+            "acpl": 20.83
+          }
+        }
+      },
+      "saved_best_gate": true
+    }
+  ]
+}

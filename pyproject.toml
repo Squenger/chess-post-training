@@ -1,0 +1,18 @@
+[project]
+name = "chess-post-training"
+version = "1.0.0"
+description = "LLM course 2026 homework: post-train a 1M-parameter chess language model"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.2",
+    "chess==1.11.2",
+    "safetensors>=0.4",
+    "numpy>=1.24",
+    "huggingface_hub>=0.24",
+    "cryptography>=42",
+    "tqdm",
+]
+
+[tool.uv]
+package = false
